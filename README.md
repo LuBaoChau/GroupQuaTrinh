@@ -47,4 +47,4 @@ của chương trình tại đây.
 - Lớp: K26411E
 - Môn học: Tư duy lập trình
 - Giảng viên: Trần Duy Thanh
-- Thành viên: Hồ Diệp Anh - K264110087, Cao Ngọc Anh Thư, Hoàng Anh Thư, Lư Bảo Châu, 
+- Thành viên: Hồ Diệp Anh, Cao Ngọc Anh Thư, Hoàng Anh Thư, Lư Bảo Châu, Trần Anh Thư
