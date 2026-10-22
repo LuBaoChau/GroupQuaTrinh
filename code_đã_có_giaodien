@@ -1,6 +1,6 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow
-from giao_dien import Ui_MainWindow  # File đã convert từ Qt Designer
+from untitled import Ui_MainWindow  # File đã convert từ Qt Designer
 
 
 class AppPTB1(QMainWindow):
