@@ -1,45 +1,43 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow
-# Import class Ui_MainWindow từ file giao_dien.py của bạn
-from giao_dien import Ui_MainWindow
+from giao_dien import Ui_MainWindow  # File đã convert từ Qt Designer
 
 
-class MainApp(QMainWindow):
+class AppPTB1(QMainWindow):
 
   def __init__(self):
     super().__init__()
-    # 1. Khởi tạo giao diện từ file đã convert
     self.ui = Ui_MainWindow()
     self.ui.setupUi(self)
 
-    # 2. Bắt sự kiện click nút bấm (Thay 'btn_giai' bằng objectName nút bấm của bạn trong Qt Designer)
-    # self.ui.btn_giai.clicked.connect(self.xu_ly_giai)
+    # NỐI NÚT TÍNH TOÁN VỚI HÀM XỬ LÝ (Không nối trong Qt Designer)
+    self.ui.btn_tinh.clicked.connect(self.xu_ly_tinh)
 
-  def xu_ly_giai(self):
+  def xu_ly_tinh(self):
     try:
-      # Lấy giá trị từ các ô nhập liệu (Thay 'txt_a', 'txt_b' bằng objectName thực tế)
+      # 1. Lấy dữ liệu từ ô nhập a và b
       a = float(self.ui.txt_a.text())
       b = float(self.ui.txt_b.text())
 
-      # Logic tính toán phương trình bậc 1
+      # 2. Logic giải phương trình bậc 1: ax + b = 0
       if a == 0:
         if b == 0:
-          kq = "Phương trình vô số nghiệm"
+          kq = "Vô số nghiệm"
         else:
-          kq = "Phương trình vô nghiệm"
+          kq = "Vô nghiệm"
       else:
         x = -b / a
         kq = f"x = {x:.2f}"
 
-      # Hiển thị ra nhãn kết quả (Thay 'lbl_ketqua' bằng objectName thực tế)
-      self.ui.lbl_ketqua.setText(f"Kết quả: {kq}")
+      # 3. ĐIỀN KẾT QUẢ RA Ô KẾ BÊN
+      self.ui.txt_ketqua.setText(kq)
 
     except ValueError:
-      self.ui.lbl_ketqua.setText("Lỗi: Nhập số hợp lệ!")
+      self.ui.txt_ketqua.setText("Lỗi: Nhập số!")
 
 
 if __name__ == "__main__":
   app = QApplication(sys.argv)
-  window = MainApp()
+  window = AppPTB1()
   window.show()
   sys.exit(app.exec())
