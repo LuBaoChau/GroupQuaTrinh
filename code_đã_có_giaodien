@@ -1,0 +1,45 @@
+import sys
+from PyQt6.QtWidgets import QApplication, QMainWindow
+# Import class Ui_MainWindow từ file giao_dien.py của bạn
+from giao_dien import Ui_MainWindow
+
+
+class MainApp(QMainWindow):
+
+  def __init__(self):
+    super().__init__()
+    # 1. Khởi tạo giao diện từ file đã convert
+    self.ui = Ui_MainWindow()
+    self.ui.setupUi(self)
+
+    # 2. Bắt sự kiện click nút bấm (Thay 'btn_giai' bằng objectName nút bấm của bạn trong Qt Designer)
+    # self.ui.btn_giai.clicked.connect(self.xu_ly_giai)
+
+  def xu_ly_giai(self):
+    try:
+      # Lấy giá trị từ các ô nhập liệu (Thay 'txt_a', 'txt_b' bằng objectName thực tế)
+      a = float(self.ui.txt_a.text())
+      b = float(self.ui.txt_b.text())
+
+      # Logic tính toán phương trình bậc 1
+      if a == 0:
+        if b == 0:
+          kq = "Phương trình vô số nghiệm"
+        else:
+          kq = "Phương trình vô nghiệm"
+      else:
+        x = -b / a
+        kq = f"x = {x:.2f}"
+
+      # Hiển thị ra nhãn kết quả (Thay 'lbl_ketqua' bằng objectName thực tế)
+      self.ui.lbl_ketqua.setText(f"Kết quả: {kq}")
+
+    except ValueError:
+      self.ui.lbl_ketqua.setText("Lỗi: Nhập số hợp lệ!")
+
+
+if __name__ == "__main__":
+  app = QApplication(sys.argv)
+  window = MainApp()
+  window.show()
+  sys.exit(app.exec())
