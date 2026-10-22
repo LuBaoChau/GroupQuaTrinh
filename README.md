@@ -14,15 +14,14 @@ người dùng được thiết kế bằng Qt Designer.
 ## 3. Công nghệ sử dụng
 - Ngôn ngữ lập trình: Python
 - Công cụ thiết kế giao diện: Qt Designer
-- Thư viện kết nối giao diện Python: [Cập nhật sau khi xác định]
+- Thư viện kết nối giao diện Python
 ## 4. Cấu trúc dự án
-- main.py: Chương trình chính và xử lý giao diện.
-- solver.py: Hàm giải phương trình.
-- mainwindow.ui: File giao diện được thiết kế bằng Qt Designer.
-- README.md: Tài liệu giới thiệu dự án.
+- File giao diện được tạo bằng Qt Designer: định nghĩa các thành phần giao diện người dùng.
+- File xử lý phương trình: chứa hàm giải phương trình bậc nhất.
+- File chương trình chính: kết nối giao diện với chức năng giải phương trình.
+- README.md: tài liệu giới thiệu dự án.
 ## 5. Cách chạy chương trình
-Sẽ cập nhật hướng dẫn sau khi hoàn thiện giao diện
-và xác định thư viện Python được sử dụng.
+Hướng dẫn chạy chương trình sẽ được cập nhật sau khi hoàn thiện và kiểm thử phần mềm.
 ## 6. Phân công thành viên
 - Thành viên 1: Quản lý và tích hợp dự án.
 - Thành viên 2: Xây dựng hàm giải phương trình.
